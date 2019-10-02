@@ -1,4 +1,4 @@
-variable "var_project" {
+variable "project_name" {
         default = "project-name"
 }
     
