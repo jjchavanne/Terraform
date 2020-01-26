@@ -3,7 +3,7 @@ provider "google" {
 }
 resource "google_compute_instance" "default" {
   project      = "${var.project_name}"
-  name         = "debian"
+  name         = "vm-debian"
   machine_type = "n1-standard-1"
   zone         = "${var.zone}"
 
