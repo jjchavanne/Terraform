@@ -5,14 +5,6 @@ resource "google_container_cluster" "gke-cluster" {
   remove_default_node_pool = true
   initial_node_count       = 1
 
-  #  master_auth {
-  #    username = ""
-  #    password = ""
-
-  #    client_certificate_config {
-  #      issue_client_certificate = false
-  #    }
-  #  }
 }
 
 resource "google_container_node_pool" "primary_preemptible_nodes" {
@@ -28,13 +20,9 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     metadata = {
       disable-legacy-endpoints = "true"
     }
-
-    #    oauth_scopes = [
-    #      "https://www.googleapis.com/auth/logging.write",
-    #      "https://www.googleapis.com/auth/monitoring",
-    #    ]
   }
 }
 
-# Temporarily need to enable this as well
+# Temporarily need to enable these as well
+# gcloud config set compute/zone us-central1-b
 # gcloud container clusters get-credentials my-cluster1
